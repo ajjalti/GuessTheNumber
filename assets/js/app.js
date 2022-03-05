@@ -1,36 +1,49 @@
-var userNumber;
-var number;
-// première méthode :
-function Guess(n){
-    var m;
-    var condition=false;
-    var count=0;
-    while(!condition){
-    m = Math.floor(Math.random()*100-10);
-    count++;
-    if(m==n){
-        condition=true;
-    }
-    }
-    if(count<50){
-    return `voilà le nombre que vous avez choisi ${n} \n sa m'a pris seulement ${count} fois je suis un génie :)`;
-}else if(count>50 && count<150){
-    return `voilà le nombre que vous avez choisi ${n} \n sa m'a pris ${count} fois, bref c'étais un peux dur mais je suis un génie :)`;
-}else if(count>150){
-    return `oof c'étais vraiment dur de trouver votre nombre cette fois ${n}\n sa m'a pris ${count} fois mais je suis un génie malgrais sa :)`;
+// function win 
+function winner(){
+    document.getElementById('score').textContent="HaHa!!! j'ai gagner je suis un génie :) !";
+    document.getElementById('image').src='images/pixlr-bg-result.png';
+    document.getElementById('image').style.animationName="move";
 }
+// function lose
+function loser(){
+    document.getElementById('score').textContent="Oops!! j'ai perdu bien joué";
+    document.getElementById('score').classList.replace('alert-success','alert-danger');
+    document.getElementById('image').src='images/pixlr-bg-result copie.png';
+    document.getElementById('image').style.animationName="lose";
 }
-//deuxième méthode :
-function guess(n,count){
-    var m = Math.floor(Math.random()*100-10);
-    if(m==n){
-        count++;
-        return `je suis douée j'ai trouvé votre numéro ${n} après ${count} fois `;
+// function run()
+function run(){
+    const num = document.getElementById('guessinNumber').value;
+    var m = Math.floor(Math.random()*100);
+    if(m==num){
+        return true;
     }else{
-        count++;
-        return `oops pas encore essay N:${count} \n${guess(n,count)}`;    
+        return m;
     }
 }
-//partie test:
-console.log(guess(25,0));
-// console.log(Guess(25));
+
+// function sleep()
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+// function guess() :
+async function guess() {
+    var res;
+    for (let i = 0; i < 20; i++) {
+        document.getElementById('bas').classList.remove('visually-hidden');
+        res =run();
+        if(run()==true){
+        document.getElementById('bas').classList.add('visually-hidden');
+        document.getElementById('score').classList.remove('visually-hidden');
+        document.getElementById('random').textContent=`je l'ai trouver vous avez choisi ${document.getElementById('guessinNumber').value}`;
+           return winner();
+        }else{
+        document.getElementById('random').textContent=`je ponse que vous avez choisi ${run()} mmm!!? non`;
+        }
+        await sleep(i * 1000);
+        document.getElementById('random').textContent=``;
+    }
+    document.getElementById('bas').classList.add('visually-hidden');
+    document.getElementById('score').classList.remove('visually-hidden');
+    loser();
+}

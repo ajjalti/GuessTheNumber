@@ -4,23 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <meta name="description" content="une jeux deux hazard créer avec java-scripte par Ahmed Ajjalti">
+    <meta name="keywords" content="javaScripte randomNumber game-java-scripte web-application free">
+    <meta name="author" content="Ahmed Ajjalti">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/app.js"></script>
     <title>GuessGame</title>
-    <style>
-    </style>
 </head>
 <body>
     <video id="background-video" autoplay loop muted>
         <source src="images/video.mp4" type="video/mp4">
         </video>
-    <div class="container-fluid bg-opacity-50 bg-black h-100">
-        <div class="form-control">
-            <input type="text" name="" id="" class="form-control">
-        </div>
+    <div class=" main container-md bg-opacity-25 bg-white m-auto text-center overflow-hidden">
+        <div class="h5 mark p-2">entrer un nombre compris entre 1 et 100 pour commencer le jeu :)</div>
+        <div id="bas" class="text-center w-100 visually-hidden">Guessing.. <div class="spinner-grow "></div><div class="spinner-grow"></div><div class="spinner-grow"></div></div>
+        <input type="text" class="form-control mt-2" id="guessinNumber" value="">
+        <div class="btn btn-outline-warning my-3 w-25" onclick="guess()">Start</div><br>
+        <div class="alert alert-info" id="random">je vais tenter ma chance 20 fois </div>
+        <img id="image" src="images/pixlr-bg-result (2).png" alt="background" class="w-75">
+        <div id="score" class="alert-success visually-hidden">bien joué !</div>
     </div>
+    <footer class="text-center text-white">&COPY; Devloped by <a href="https://www.linkedin.com/in/ahmed-ajjalti/">Ahmed Ajjalti</a></footer>
 </body>
 </html>
