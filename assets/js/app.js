@@ -52,5 +52,6 @@ async function guess() {
 function reset(){
     document.getElementById('score').classList.add('visually-hidden');
     document.getElementById('image').src='images/pixlr-bg-result (2).png';
+    document.getElementById('random').textContent="une autre partie ?! :)"
 
 }
