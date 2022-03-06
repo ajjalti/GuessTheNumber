@@ -4,6 +4,8 @@ function winner(){
     document.getElementById('score').classList.replace('alert-danger','alert-success');
     document.getElementById('image').src='images/pixlr-bg-result.png';
     document.getElementById('image').style.animationName="move";
+    document.getElementById('random').classList.add('visually-hidden');
+
 }
 // function lose
 function loser(){
@@ -11,6 +13,8 @@ function loser(){
     document.getElementById('score').classList.replace('alert-success','alert-danger');
     document.getElementById('image').src='images/pixlr-bg-result copie.png';
     document.getElementById('image').style.animationName="lose";
+    document.getElementById('random').classList.add('visually-hidden');
+
 }
 // function run()
 function run(){
@@ -52,6 +56,7 @@ async function guess() {
 function reset(){
     document.getElementById('score').classList.add('visually-hidden');
     document.getElementById('image').src='images/pixlr-bg-result (2).png';
+    document.getElementById('random').classList.remove('visually-hidden');
     document.getElementById('random').textContent="une autre partie ?! :)"
 
 }

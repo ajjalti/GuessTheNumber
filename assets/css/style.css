@@ -43,5 +43,5 @@ body{
 }
 @keyframes lose {
     from{transform: scale(1.3,1.3);}
-    to{transform: translateY(-3vh) scale(1,1);}
+    to{transform: translateY(-5vh) scale(1,1);}
 }
