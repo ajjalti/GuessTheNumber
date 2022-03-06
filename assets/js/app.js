@@ -1,6 +1,7 @@
 // function win 
 function winner(){
-    document.getElementById('score').textContent="HaHa!!! j'ai gagner je suis un génie :) !";
+    document.getElementById('score').textContent="HaHa!!! j'ai gagné je suis un génie :) !";
+    document.getElementById('score').classList.replace('alert-danger','alert-success');
     document.getElementById('image').src='images/pixlr-bg-result.png';
     document.getElementById('image').style.animationName="move";
 }
@@ -36,9 +37,9 @@ async function guess() {
         document.getElementById('bas').classList.add('visually-hidden');
         document.getElementById('score').classList.remove('visually-hidden');
         document.getElementById('random').textContent=`je l'ai trouver vous avez choisi ${document.getElementById('guessinNumber').value}`;
-           return winner();
+        return winner();
         }else{
-        document.getElementById('random').textContent=`je ponse que vous avez choisi ${run()} mmm!!? non`;
+        document.getElementById('random').textContent=`je pense que vous avez choisi ${run()} mmm!!? non`;
         }
         await sleep(i * 1000);
         document.getElementById('random').textContent=``;
@@ -46,4 +47,10 @@ async function guess() {
     document.getElementById('bas').classList.add('visually-hidden');
     document.getElementById('score').classList.remove('visually-hidden');
     loser();
+}
+// function reset():
+function reset(){
+    document.getElementById('score').classList.add('visually-hidden');
+    document.getElementById('image').src='images/pixlr-bg-result (2).png';
+
 }

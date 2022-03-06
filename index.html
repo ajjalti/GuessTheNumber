@@ -17,11 +17,11 @@
         <source src="images/video.mp4" type="video/mp4">
         </video>
     <div class=" main container-md bg-opacity-25 bg-white m-auto text-center overflow-hidden">
-        <div class="h5 mark p-2">entrer un nombre compris entre 1 et 100 pour commencer le jeu :)</div>
+        <div class="h5 mark p-2">entrer un nombre compris entre 0 et 100 et je vais essayer de le trouver :)</div>
         <div id="bas" class="text-center w-100 visually-hidden">Guessing.. <div class="spinner-grow "></div><div class="spinner-grow"></div><div class="spinner-grow"></div></div>
-        <input type="text" class="form-control mt-2" id="guessinNumber" value="">
+        <input type="text" class="form-control mt-2" id="guessinNumber" value="" onfocus="reset()">
         <div class="btn btn-outline-warning my-3 w-25" onclick="guess()">Start</div><br>
-        <div class="alert alert-info" id="random">je vais tenter ma chance 20 fois </div>
+        <div class="alert alert-info" id="random">je vais tenter ma chance 20 fois seulement </div>
         <img id="image" src="images/pixlr-bg-result (2).png" alt="background" class="w-50">
         <div id="score" class="alert-success visually-hidden text-center w-100"></div>
     </div>

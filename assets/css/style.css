@@ -28,7 +28,7 @@ body{
     bottom: 10vh!important;
 }
 #image{
-    max-width: 500px;
+    max-width: 400px;
     animation-name: none;
     animation-duration: 5s;
     animation-fill-mode: forwards;
