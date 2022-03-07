@@ -4,6 +4,7 @@ function winner(){
     document.getElementById('score').classList.replace('alert-danger','alert-success');
     document.getElementById('image').src='images/pixlr-bg-result.png';
     document.getElementById('image').style.animationName="move";
+    document.getElementById('image').style.animationIterationCount="initial";
     const num = document.getElementById('guessinNumber').value;
     document.getElementById('random').textContent=`Haa! je l'ai trouver c'est le ${num} :)`;
     document.getElementById('status').classList.add('visually-hidden');
@@ -17,6 +18,7 @@ function loser(){
     document.getElementById('image').style.animationName="lose";
     document.getElementById('random').classList.add('visually-hidden');
     document.getElementById('status').classList.add('visually-hidden');
+    document.getElementById('image').style.animationIterationCount="initial";
 
 }
 // function run()
@@ -38,6 +40,7 @@ function sleep(ms) {
 async function guess() {
     var res;
     var count=0;
+    document.getElementById('image').style.animationName="jump";
     for (let i = 0; i < 20; i++) {
         count++;
         document.getElementById('status').classList.remove('visually-hidden');
@@ -65,6 +68,8 @@ function reset(){
     document.getElementById('score').classList.add('visually-hidden');
     document.getElementById('image').src='images/pixlr-bg-result (2).png';
     document.getElementById('random').classList.remove('visually-hidden');
-    document.getElementById('random').textContent="une autre partie ?! :)"
+    document.getElementById('random').textContent="une autre partie ?! :)";
+    document.getElementById('image').style.animationName="none";
+
 
 }
