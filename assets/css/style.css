@@ -24,6 +24,7 @@ body{
     margin-top: 5vh!important;
 }
 #bas{
+    z-index: 1!important;
     position: absolute!important;
     bottom: 10vh!important;
 }

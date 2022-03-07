@@ -4,7 +4,9 @@ function winner(){
     document.getElementById('score').classList.replace('alert-danger','alert-success');
     document.getElementById('image').src='images/pixlr-bg-result.png';
     document.getElementById('image').style.animationName="move";
-    document.getElementById('random').classList.add('visually-hidden');
+    const num = document.getElementById('guessinNumber').value;
+    document.getElementById('random').textContent=`Haa! je l'ai trouver c'est le ${num} :)`;
+    document.getElementById('status').classList.add('visually-hidden');
 
 }
 // function lose
@@ -14,6 +16,7 @@ function loser(){
     document.getElementById('image').src='images/pixlr-bg-result copie.png';
     document.getElementById('image').style.animationName="lose";
     document.getElementById('random').classList.add('visually-hidden');
+    document.getElementById('status').classList.add('visually-hidden');
 
 }
 // function run()
@@ -34,7 +37,11 @@ function sleep(ms) {
 // function guess() :
 async function guess() {
     var res;
+    var count=0;
     for (let i = 0; i < 20; i++) {
+        count++;
+        document.getElementById('status').classList.remove('visually-hidden');
+        document.getElementById('status').textContent=`Essay N: ${count}`;
         document.getElementById('bas').classList.remove('visually-hidden');
         res =run();
         if(run()==true){
@@ -45,7 +52,7 @@ async function guess() {
         }else{
         document.getElementById('random').textContent=`je pense que vous avez choisi ${run()} mmm!!? non`;
         }
-        await sleep(i * 1000);
+        await sleep(i * 500);
         document.getElementById('random').textContent=``;
     }
     document.getElementById('bas').classList.add('visually-hidden');
@@ -54,6 +61,7 @@ async function guess() {
 }
 // function reset():
 function reset(){
+    document.getElementById('status').classList.add('visually-hidden');
     document.getElementById('score').classList.add('visually-hidden');
     document.getElementById('image').src='images/pixlr-bg-result (2).png';
     document.getElementById('random').classList.remove('visually-hidden');
